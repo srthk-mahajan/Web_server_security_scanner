@@ -1,13 +1,4 @@
 # Web_server_security_scanner
-profile
-Qwen2.5-Max
-12:59 am
-Below is a professional and detailed README.md for your Python script. It explains the purpose of the tool, how to set it up, how to run it, and provides troubleshooting tips.
-
-Web Server Security Assessment Tool
-Python
-License
-
 This script automates security assessments of web servers by leveraging tools like Nmap , Nikto , and the NIST National Vulnerability Database (NVD) . It scans for open ports, detects vulnerabilities, fetches associated CVEs, and generates a comprehensive PDF report.
 
 Table of Contents
