@@ -1,63 +1,143 @@
-# Web_server_security_scanner
+# **Web Server Security Scanner**  
 
-This script automates security assessments of web servers by leveraging tools like Nmap and Nikto and cross references their findings with the NIST National Vulnerability Database (NVD) . It scans for open ports, detects vulnerabilities, fetches associated CVEs, and generates a comprehensive PDF report.
+This script automates security assessments of web servers using **Nmap** and **Nikto**. It cross-references the findings with the **NIST National Vulnerability Database (NVD)** to detect vulnerabilities. The tool scans for open ports, fetches associated CVEs, and generates a **detailed PDF report**.  
 
-Table of Contents
-Features
-Prerequisites
-Installation
-Usage
-Report Generation
-Troubleshooting
-Contributing
-License
-Features
-Nmap Integration : Scans for open ports and identifies services running on the target server.
-Nikto Integration : Detects web server vulnerabilities, misconfigurations, and outdated software.
-NIST API Lookup : Fetches CVEs for detected Apache versions and Nikto vulnerabilities.
-Automated Report Generation : Generates a detailed PDF report summarizing findings.
-Optimized Performance : Includes configurable timeouts and parallel execution for faster scans.
-Prerequisites
-Before running the script, ensure the following tools and libraries are installed:
+---
 
-Tools
-Python 3.x : The script is written in Python 3. Install it from python.org .
-Nmap : A network scanning tool. Download it from nmap.org .
-Nikto : A web server vulnerability scanner. Download it from Nikto's GitHub repository .
-wkhtmltopdf : Required for generating PDF reports. Download it from wkhtmltopdf.org .
-Libraries
-Install the required Python libraries using pip:
+## **Table of Contents**  
+
+- [Features](#features)  
+- [Prerequisites](#prerequisites)  
+  - [Tools](#tools)  
+  - [Libraries](#libraries)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Customization](#customization)  
+- [Report Generation](#report-generation)  
+- [Contributing](#contributing)  
+
+---
+
+## **Features**  
+
+- **🔍 Nmap Integration** – Scans for open ports and identifies running services.  
+- **🛡️ Nikto Integration** – Detects web server vulnerabilities and misconfigurations.  
+- **⚡ NIST API Lookup** – Fetches CVEs for **Apache versions** and **Nikto vulnerabilities**.  
+- **📄 Automated Report Generation** – Creates a **detailed PDF report** of findings.  
+- **🚀 Optimized Performance** – Configurable timeouts and parallel execution for faster scans.  
+
+---
+
+## **Prerequisites**  
+
+Before running the script, ensure the following tools and libraries are installed:  
+
+### **Tools**  
+
+- **Python 3.x** – Install from [python.org](https://www.python.org/)  
+- **Nmap** – Download from [nmap.org](https://nmap.org/)  
+- **Nikto** – Download from [Nikto's GitHub](https://github.com/sullo/nikto)  
+- **wkhtmltopdf** – Required for PDF generation ([Download](https://wkhtmltopdf.org/))  
+
+### **Libraries**  
+
+Install the required Python libraries:  
+
+```sh
 pip install requests pdfkit
-Installation
-git clone https://github.com/your-username/web-server-security-tool.git
-cd web-server-security-tool
-Install dependencies:
-pip install -r requirements.txt
-Configure Paths:
-Update the paths for nikto.pl and nikto.conf.default and subfolders-docs,plugin,template and database in the script if they differ from the default locations.
-Run the script as follows:
-python security_assessment.py
-Customization
-You can customize the script by modifying the following constants at the top of the file:
+```
 
-TARGET_IP: The IP address of the target server.
-TARGET_URL: The URL of the target server (e.g., http://localhost)
+---
+**Since pip installations often fail on Kali, it's recommended to use a virtual environment:**
+```sh
+python3 -m venv scanner_env
+source scanner_env/bin/activate
+pip install requests pdfkit
+
+```
+## **Installation**  
+
+1. Clone the repository:  
+
+   ```sh
+   git clone https://github.com/your-username/web-server-security-tool.git
+   cd web-server-security-tool
+   ```
+
+2. Install dependencies:  
+
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. Configure paths:  
+
+   Update the paths for **nikto.pl**, **nikto.conf.default**, and the subfolders (**docs, plugin, template, database**) in the script if they differ from the default locations(all of them should be at C:\Nikto)  
+
+4. Run the script:  
+
+   ```sh
+   python security_assessment.py
+   ```
+
+---
+
+## **Customization**  
+
+Modify the following constants in the script to set the target server:  
+
+```python
 TARGET_IP = "192.168.1.10"
 TARGET_URL = "http://192.168.1.10"
-Report Generation
-The script generates a detailed PDF report named WebServer_Security_Report.pdf. The report includes:
+```
 
-Nmap scan results.
-Nikto scan results.
-Detected Apache version and associated CVEs.
-Open ports and risky ports.
-Nikto vulnerabilities and associated CVEs.
-The report is saved in the same directory as the script.
-Contributing
-Contributions are welcome! If you find any issues or have suggestions for improvements:
+---
 
-Fork the repository.
-Create a new branch (git checkout -b feature/YourFeatureName).
-Commit your changes (git commit -m "Add YourFeatureName") .
-Push to the branch (git push origin feature/YourFeatureName).
-Open a pull request.
+## **Report Generation**  
+
+The script generates a **detailed PDF report** named **`WebServer_Security_Report.pdf`**. It includes:  
+
+- **Nmap scan results**  
+- **Nikto scan results**  
+- **Detected Apache version and associated CVEs**  
+- **Open ports and risky ports**  
+- **Nikto vulnerabilities and associated CVEs**  
+
+📂 **The report is saved in the same directory as the script.**  
+
+---
+
+## **Contributing**  
+
+Contributions are welcome! To contribute:  
+
+1. **Fork** the repository.  
+2. Create a **new branch**:  
+
+   ```sh
+   git checkout -b feature/YourFeatureName
+   ```
+
+3. Commit your changes:  
+
+   ```sh
+   git commit -m "Add YourFeatureName"
+   ```
+
+4. Push to your branch:  
+
+   ```sh
+   git push origin feature/YourFeatureName
+   ```
+
+5. Open a **pull request**.  
+
+---
+
+## **License**  
+
+This project is licensed under the **MIT License**.  
+
+---
+
+This version will display properly on **GitHub**, with correct **spacing, bullet points, and headers** for a clean and readable look. Let me know if you need any tweaks! 🚀
