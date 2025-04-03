@@ -11,7 +11,6 @@ This script automates security assessments of web servers using **Nmap** and **N
   - [Tools](#tools)  
   - [Libraries](#libraries)  
 - [Installation](#installation)  
-- [Usage](#usage)  
 - [Customization](#customization)  
 - [Report Generation](#report-generation)  
 - [Contributing](#contributing)  
@@ -134,10 +133,3 @@ Contributions are welcome! To contribute:
 
 ---
 
-## **License**  
-
-This project is licensed under the **MIT License**.  
-
----
-
-This version will display properly on **GitHub**, with correct **spacing, bullet points, and headers** for a clean and readable look. Let me know if you need any tweaks! 🚀
